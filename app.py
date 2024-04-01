@@ -15,8 +15,10 @@ if __name__ == '__main__':
         """
         <style>
             .stApp {
-                zoom: 1.2;
                 height: 100%;
+            }
+            .st-emotion-cache-1y4p8pa {
+                padding-top: 1rem;
             }
         </style>
         """,
@@ -30,3 +32,4 @@ if __name__ == '__main__':
             
     with about:
         ab.about()
+            
