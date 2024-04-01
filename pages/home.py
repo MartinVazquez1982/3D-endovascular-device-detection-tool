@@ -4,6 +4,7 @@ import subprocess
 import os
 
 def home():
+    
     inferenceOk = False
     noImage = False
     
@@ -57,3 +58,5 @@ def home():
         button = st.button('Download')
     if noImage:
         st.error('Image not uploaded')
+
+
