@@ -1,5 +1,4 @@
 import streamlit as st
-from PIL import Image
 
 def about():
     st.title('About')
@@ -20,5 +19,13 @@ def about():
         st.write('Dr. Ignacio Larrabide')
         st.write('Dra. Romina Luciana Muñoz')
         
-
-
+    leftImg, centerImg, rightImg = st.columns(3)
+    
+    with leftImg:
+        st.image(r'images\\pladema.png', width=160)
+    
+    with centerImg:
+        st.image(r'images\\unicen.png', width=160)
+        
+    with rightImg:
+        st.image(r'images\\yatiris.png', width=160)
