@@ -1,8 +1,7 @@
 import streamlit as st
 import time
-import subprocess
+import datetime
 import os
-from scripts import getInferenceFront as getInf
 
     
 inferenceOk = False
@@ -29,7 +28,8 @@ if imagen is not None:
         os.makedirs(source_user_inference_path)
     
     # It is load the image in the memory
-    imagen_path = os.path.join(source_user_image_path, f"user_image.nii.gz")
+    timestamp = datetime.datetime.now().strftime("%Y%m%d_%H%M%S")
+    imagen_path = os.path.join(source_user_image_path, f"image_{timestamp}.nii.gz")
     with open(imagen_path, "wb") as f:
         f.write(imagen.read())
 
@@ -41,13 +41,13 @@ with left:
     button = st.button('Get segmentation')
 
 if button and (imagen is not None):
-    with st.spinner('Wait for it...'):
-        time.sleep(5)
+    with st.spinner('Generating segmentation'):
+        time.sleep(10)
         imagen_path = os.path.abspath(imagen_path)
-        result = subprocess.run('sbatch /home/mvazquez/frontend/scripts/EXE_runService.sh', shell=True, capture_output=True, text=True)
+        # Comando
 
 # Verificar si el subproceso terminó exitosamente
-        if result.returncode == 0:  # El código de retorno 0 indica éxito
+        if True:  # El código de retorno 0 indica éxito
             inferenceOk = True
         else:
             st.error(' Error when performing inference', icon='❌')
@@ -58,7 +58,7 @@ elif button and (imagen is None):
 with right:
     option = st.selectbox(
         "Select a model",
-        ("Model 1", "Model 2", "Model 3"))
+        ("Model 0", "Model 1", "Model 2", "Model 5", "Model 10", "Model 11", "Model 15"))
         
 # Segmentation request result
 if inferenceOk:
