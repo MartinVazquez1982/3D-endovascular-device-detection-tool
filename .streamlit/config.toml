@@ -4,5 +4,3 @@ backgroundColor="#00254E"
 secondaryBackgroundColor="#5D83B1"
 textColor="#f2f2f2"
 font="sans serif"
-[client]
-showsidebarnavigation = false
