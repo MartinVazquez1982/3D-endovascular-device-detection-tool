@@ -1,7 +1,9 @@
 import streamlit as st
 import os
+from dotenv import load_dotenv
 
-#block-container
+load_dotenv(override=True)
+
 # Page configuration
 st.set_page_config(
     page_title='WEB Segmentation',

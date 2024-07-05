@@ -1,14 +1,19 @@
 import streamlit as st
-import time
 import datetime
 import os
+import importlib
 
+# Load of the Predictor
+file_name = os.getenv('FILE_NAME')
+class_name = os.getenv('CLASS_NAME')
+module_predictor = importlib.import_module(f"predictors.{file_name}")
+class_predictor = getattr(module_predictor, class_name)
     
 inferenceOk = False
 noImage = False
 inference_script_path = None
 
-# title of the page
+# Title of the page
 st.title('3D Brain Aneurysm Detection Tool')
 st.header('Basic segmentacion model of devices for the treatment of cerebral aneuryms from 3D medical images')
 
@@ -42,9 +47,9 @@ with left:
 
 if button and (imagen is not None):
     with st.spinner('Generating segmentation'):
-        time.sleep(10)
         imagen_path = os.path.abspath(imagen_path)
-        # Comando
+        predictor = class_predictor('hola')
+        predictor.predict(imagen_path)
 
 # Verificar si el subproceso terminó exitosamente
         if True:  # El código de retorno 0 indica éxito
