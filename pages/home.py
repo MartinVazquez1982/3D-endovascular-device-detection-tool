@@ -47,8 +47,8 @@ with left:
 
 if button and (imagen is not None):
     with st.spinner('Generating segmentation'):
-        imagen_path = os.path.abspath(imagen_path)
-        predictor = class_predictor('hola')
+        model = os.path.join('/','home', 'mvazquez', 'models', 'model_10')
+        predictor = class_predictor(model)
         predictor.predict(imagen_path)
 
 # Verificar si el subproceso terminó exitosamente
