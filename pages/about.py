@@ -4,18 +4,18 @@ import os
 st.title('About')
 st.write("During the Supervised Professional Practice (SPP) period, a computer vision project in medicine focusing on brain aneurysm segmentation from 3D medical images was undertaken. This experience for Systems Engineers explored the application of artificial intelligence in medicine, enhancing both diagnosis and treatment. The project followed a combined approach, leveraging both in-person and remote work, with fixed schedules and seamless communication with the Yatiris team. A cyclical methodology of training and evaluation was utilized to optimize the segmentation model's performance, employing tools such as PyTorch, SLURM, and Slicer 3D.")
 
-leftTitle, rightTitle = st.columns(2)
+_, creator, _ , _ , directors, _ = st.columns(6)
 
-with leftTitle:
-    st.write('Creators:')
+with creator:
+    st.subheader('Creators')
     
-with rightTitle:
-    st.write('Directors:')
+with directors:
+    st.subheader('Directors')
 
 left, centerLeft, centerRight, right = st.columns(4)
 
 with left:
-        st.write('David Burckhardt')
+    st.write('David Burckhardt')
 
 with centerLeft:
     st.write('Martin Vazquez Arispe')
