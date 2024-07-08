@@ -17,3 +17,10 @@ Ejecutar comando
 ```bash
 streamlit run app.py
 ```
+
+## TO - DO
+
+- Tema de descarga
+- Gestion de archivos
+ - Podria ser que cuando la descarga se borre
+- Ver tema de cambiar de pestaña a la mitad de una inferencia, que hacer
