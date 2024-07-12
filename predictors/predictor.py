@@ -8,5 +8,5 @@ class Predictor(ABC):
         self.model = model_path
     
     @abstractmethod
-    def predict(self, imagen):
+    def predict(self, img_input, img_output):
         pass

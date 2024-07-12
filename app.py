@@ -21,6 +21,7 @@ st.html(
         padding-left: 0px;
         padding-right: 0px;
         padding-bottom: 0px;
+        width: 60%
     }
     </style>
     """
