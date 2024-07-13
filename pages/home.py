@@ -11,6 +11,7 @@ class_predictor = getattr(module_predictor, class_name)
 inferenceOk = False
 noImage = False
 inference_script_path = None
+imagen_path = None
 
 # Title of the page
 st.title('3D Endovascular Device Detection Tool')
@@ -33,8 +34,8 @@ if imagen is not None:
         os.makedirs(source_user_inference_path)
     
     files = os.listdir(source_user_image_path)
+    imagen_path = os.path.join(source_user_image_path, f"{imagen.file_id}.nii.gz")
     if f'{imagen.file_id}.nii.gz' not in files:
-        imagen_path = os.path.join(source_user_image_path, f"{imagen.file_id}.nii.gz")
         with open(imagen_path, "wb") as f:
             f.write(imagen.read())
 
@@ -72,8 +73,14 @@ if inferenceOk:
     with left:
         st.success(' Inference obtained successfully!', icon="✅")
     with right:
-        binary_contents = b"example content"
-        st.download_button('Download Inference',binary_contents)
+        with open(img_output, "rb") as file:
+            inf_result = file.read()
+        st.download_button(
+            label='Download Inference',
+            data=inf_result,
+            file_name=os.path.basename(img_output),
+            mime='application/x-gzip'
+        )
 
 if noImage:
     st.error(' Image not uploaded', icon='❌')

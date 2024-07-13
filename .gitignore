@@ -4,3 +4,4 @@ predictors/*.py
 !predictors/predictor.py
 source_inference/*
 source_user_image/*
+**/__pycache__
