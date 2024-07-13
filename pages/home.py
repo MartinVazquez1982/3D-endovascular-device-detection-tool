@@ -1,6 +1,7 @@
 import streamlit as st
 import os
 import importlib
+from models.modelManager import ModelManager
 
 # Load of the Predictor
 file_name = os.getenv('FILE_NAME')
@@ -45,17 +46,15 @@ left, right = st.columns([10,5])
 
 # Select a model
 with right:
-    option = st.selectbox(
-        "Select a model",
-        ("Model 0", "Model 1", "Model 2", "Model 5", "Model 10", "Model 11", "Model 15"))
+    option_model = st.selectbox( "Select a model", ModelManager.get_models())
 
 with left:
     button = st.button('Get segmentation')
 
 if button and (imagen is not None):
     with st.spinner('Generating segmentation'):
-        model = os.path.join('/','home', 'mvazquez', 'models', 'model_10')
-        img_output = os.path.join('source_inference', imagen.name)
+        model = ModelManager.path_model(option_model)
+        img_output = os.path.join('source_inference', f"{option_model}-{imagen.name}")
         with open('archivo_vacio.txt', 'w') as archivo:
             pass 
         predictor = class_predictor(model)
