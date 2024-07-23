@@ -77,5 +77,5 @@ README.md
 |-------------|----------------|-----------------------------|
 | Creator     | David Burckhardt   | [burck432@gmail.com](mailto:burck432@gmail.com)   |
 | Creator     | Martin Vazquez Arispe    | [martin.vazquez.arispe@gmail.com](mailto:martin.vazquez.arispe@gmail.com)     |
-| Director    | Ignacio Larrabide  | [ilarrabide@pladema.exa.unicen.edu.ar](mailto:ilarrabide@pladema.exa.unicen.edu.ar)    |
-| Co-Director    | Romina Luciana Muñoz   | [romi.l.m9@gmail.com](mailto:romi.l.m9@gmail.com)     |
+| Director    | Dr. Ignacio Larrabide  | [ilarrabide@pladema.exa.unicen.edu.ar](mailto:ilarrabide@pladema.exa.unicen.edu.ar)    |
+| Co-Director    | Dra. Romina Luciana Muñoz   | [romi.l.m9@gmail.com](mailto:romi.l.m9@gmail.com)     |
