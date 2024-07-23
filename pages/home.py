@@ -48,10 +48,13 @@ left, right = st.columns([10,5])
 with right:
     option_model = st.selectbox( "Select a model", ModelManager.get_models())
 
+# Button for requesting an inference
 with left:
     button = st.button('Get segmentation')
 
 if button and (imagen is not None):
+    
+    # Logic for requesting an inference
     with st.spinner('Generating segmentation'):
         model = ModelManager.path_model(option_model)
         img_output = os.path.join('source_inference', f"{option_model}-{imagen.name}")
@@ -81,6 +84,7 @@ if inferenceOk:
             mime='application/x-gzip'
         )
 
+# Error message if not uploaded an image
 if noImage:
     st.error(' Image not uploaded', icon='❌')
 

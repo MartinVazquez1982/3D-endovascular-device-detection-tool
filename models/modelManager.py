@@ -4,29 +4,37 @@ import json
 import pandas as pd
 
 class ModelManager:
+    """
+    this class performs the administration of the models
+
+    Attributes:
+        metrics_models (pd.DataFrame | None): Pandas dataframe with the metric values if it created; else None if not
+    """
     
     metrics_models = None
     
     @staticmethod
-    def get_models():
-        """_summary_
+    def get_models() -> list[str]:
+        """
+        this method returns the model names in the mdoels directory
 
         Returns:
-            _type_: _description_
+            list[str]: list of the model name
         """
         path = os.path.join('models')
         models = [name for name in os.listdir(path) if os.path.isdir(os.path.join(path, name)) and name != '__pycache__']
         return models
 
     @staticmethod
-    def path_model(model):
-        """_summary_
+    def path_model(model: str) -> str | None:
+        """
+        This method returns the model path if it exists; else it returns None.
 
         Args:
-            model (_type_): _description_
+            model (str): Model name
 
         Returns:
-            _type_: _description_
+            str | None: model path or None
         """
         models = ModelManager.get_models()
         model = next((x for x in models if x == model), None)
@@ -36,10 +44,11 @@ class ModelManager:
     
     @staticmethod
     def getDataFrameMetrics() -> pd.DataFrame:
-        """_summary_
+        """
+        This method creates and returns a pandas dataframe with the metric values
 
         Returns:
-            pd.DataFrame: _description_
+            pd.DataFrame: Pandas dataframe with the metric values
         """
         if ModelManager.metrics_models is None:
             all_metrics = []

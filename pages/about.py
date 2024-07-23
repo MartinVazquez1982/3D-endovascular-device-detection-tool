@@ -1,9 +1,13 @@
 import streamlit as st
 import os
 
+# Title of the page
 st.title('About')
+
+# About the project
 st.write("During the Supervised Professional Practice (SPP) period, a computer vision project in medicine focusing on brain aneurysm segmentation from 3D medical images was undertaken. This experience for Systems Engineers explored the application of artificial intelligence in medicine, enhancing both diagnosis and treatment. The project followed a combined approach, leveraging both in-person and remote work, with fixed schedules and seamless communication with the Yatiris team. A cyclical methodology of training and evaluation was utilized to optimize the segmentation model's performance, employing tools such as PyTorch, SLURM, and Slicer 3D.")
 
+# Creators and directors section
 _, creator, _ , _ , directors, _ = st.columns(6)
 
 with creator:
@@ -28,6 +32,7 @@ with right:
 
 st.divider()
 
+# Images of the institures
 leftImg, centerleftImg, centerRightImg,rightImg = st.columns(4)
 
 with leftImg:
